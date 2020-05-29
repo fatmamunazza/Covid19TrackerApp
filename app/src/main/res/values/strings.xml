@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Covid19TrackerApp</string>
+
+    <string name="totalCasesOfWorld"> Total CoronaVirus Cases All Over World</string>
+    <string name="recovered"> Total Recovered Cases</string>
+    <string name="death"> Total Death</string>
+
+    <string name="quotes">Save Earth From COVID-19 \n Stay Home, Stay Safe</string>
+
+    <string name="activeCases">Active Cases \n (Currently infected patients)</string>
+    <string name="mildCondition">In mild Condition</string>
+    <string name="critical">Serious or Critical </string>
+</resources>
