@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimaryDark"/>
+    <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:weightSum="3"
+        android:id="@+id/countryLayout">
+       <TextView
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:text="Afganistan"
+           android:textColor="@color/progressEnd"
+           android:padding="10dp"
+           android:id="@+id/countryName"
+           android:textStyle="bold"/>
+       <View
+           android:layout_width="2dp"
+           android:layout_height="match_parent"
+           android:background="@color/colorPrimaryDark"/>
+       <TextView
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:text="2000"
+           android:textColor="@color/population"
+           android:gravity="center"
+           android:padding="5dp"
+           android:id="@+id/totalCases"/>
+       <View
+           android:layout_width="2dp"
+           android:layout_height="match_parent"
+           android:background="@color/colorPrimaryDark"/>
+       <TextView
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:text="100"
+           android:textColor="@color/test"
+           android:gravity="center"
+           android:padding="5dp"
+           android:id="@+id/totalDeath"/>
+
+   </LinearLayout>
+
+</LinearLayout>

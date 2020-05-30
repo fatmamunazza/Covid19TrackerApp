@@ -6,12 +6,23 @@
     <color name="totalCase">#880202</color>
     <color name="lightTotalCases">#F30707</color>
     <color name="white">#FFF</color>
-   <!-- <color name="colorPrimary">#1776EA</color>
-    <color name="colorPrimaryDark">#0110FB</color>
-    <color name="colorAccent">#18AFEA</color>-->
+
+    <color name="title">#FFF</color>
+
+    <color name="mid">#6200EE</color>
+    <color name="top">#3700B3</color>
+    <color name="end">#C7D2ED</color>
+
+    <color name="bar">#000</color>
+
+    <color name="headingCountry">#07433E</color>
 
     <color name="recovered">#189C09</color>
     <color name="death">#000</color>
     <color name="progressStart">#4A071A</color>
     <color name="progressEnd">#D13D78</color>
+
+    <color name="population">#F6A401</color>
+    <color name="test">#334968</color>
+    <color name="testLight">#035C85</color>
 </resources>

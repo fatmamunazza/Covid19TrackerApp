@@ -15,9 +15,9 @@
             android:width="30dp" />
 
         <gradient
-            android:centerColor="@color/progressEnd"
+            android:centerColor="#E44786"
             android:centerY="0.5"
-            android:endColor="@color/progressStart"
+            android:endColor="#6C0D28"
             android:startColor="#00938c87"
             android:type="sweep"
             android:useLevel="false" />
