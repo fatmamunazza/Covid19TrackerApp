@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment.Country"
-    android:background="@drawable/gradient_background"
-    android:orientation="vertical">
+    android:background="@drawable/gradient_background">
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
@@ -16,24 +15,64 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/title"
-                android:gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
-                android:textStyle="bold"
-                android:id="@+id/countryName"
-                android:fontFamily="serif"
-                android:textSize="15sp"/>
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="2dp"
+                    android:layout_centerInParent="true">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/title"
+                        android:gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:textStyle="bold"
+                        android:id="@+id/countryName"
+                        android:fontFamily="serif"
+                        android:textSize="15sp"/>
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:scaleType="centerCrop"
-                android:layout_gravity="center_horizontal"
-                android:id="@+id/flag"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/flag"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone"
+                    android:id="@+id/affectedStatesTab">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="60dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="20dp"
+                        android:id="@+id/map" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/end"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="@string/affectedStates"
+                        android:fontFamily="serif"
+                        android:textSize="10sp"
+                        android:id="@+id/tvStates" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -45,6 +84,7 @@
                 app:cardCornerRadius="7dp"
                 app:cardElevation="20dp">
 
+<!--
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -54,6 +94,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:text="@string/worldData"
                         android:textColor="@color/totalCase"
                         android:gravity="center"/>
                     <LinearLayout
@@ -74,6 +115,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif-condensed-medium"
                                 android:text="@string/totalPopulation"
+                                android:gravity="center"
                                 android:textColor="@color/lightTotalCases"/>
 
                             <TextView
@@ -83,6 +125,7 @@
                                 android:textColor="@color/population"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
+                                android:gravity="center"
                                 android:id="@+id/tvPopulation"/>
                         </LinearLayout>
                         <LinearLayout
@@ -97,6 +140,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif-condensed-medium"
                                 android:text="@string/totalTest"
+                                android:gravity="center"
                                 android:textColor="@color/test"/>
 
                             <TextView
@@ -106,6 +150,7 @@
                                 android:textColor="@color/testLight"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
+                                android:gravity="center"
                                 android:id="@+id/tvTest"/>
                         </LinearLayout>
 
@@ -115,6 +160,67 @@
 
 
                 </LinearLayout>
+-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="2"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="5dp"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="@string/totalPopulation"
+                            android:gravity="center"
+                            android:textColor="@color/lightTotalCases"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="serif-monospace"
+                            android:textColor="@color/population"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:id="@+id/tvPopulation"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="5dp"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="@string/totalTest"
+                            android:gravity="center"
+                            android:textColor="@color/test"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="serif-monospace"
+                            android:textColor="@color/testLight"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:id="@+id/tvTest"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
 
             </androidx.cardview.widget.CardView>
 
@@ -146,6 +252,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/totalCase"
                         android:gravity="center"
+                        android:fontFamily="serif-monospace"
                         android:textStyle="bold"
                         android:textSize="20sp"
                         android:id="@+id/tvTotalCases"/>
@@ -168,7 +275,8 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif-condensed-medium"
                                 android:text="@string/recovered"
-                                android:textColor="@color/recovered"/>
+                                android:textColor="@color/recovered"
+                                android:gravity="center"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -177,6 +285,7 @@
                                 android:textColor="@color/recovered"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
+                                android:gravity="center"
                                 android:id="@+id/tvRecovered"/>
                         </LinearLayout>
                         <LinearLayout
@@ -191,6 +300,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif-condensed-medium"
                                 android:text="@string/death"
+                                android:gravity="center"
                                 android:textColor="@color/death"/>
 
                             <TextView
@@ -199,6 +309,7 @@
                                 android:fontFamily="serif-monospace"
                                 android:textColor="@color/death"
                                 android:textSize="20sp"
+                                android:gravity="center"
                                 android:textStyle="bold"
                                 android:id="@+id/tvDeath"/>
                         </LinearLayout>
@@ -238,6 +349,7 @@
                         android:textColor="@color/totalCase"
                         android:gravity="center"
                         android:textStyle="bold"
+                        android:fontFamily="serif-monospace"
                         android:textSize="20sp"
                         android:id="@+id/tvActive"/>
 
@@ -259,14 +371,16 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif-condensed-medium"
                                 android:text="@string/mildCondition"
-                                android:textColor="@color/recovered"/>
+                                android:gravity="center"
+                                android:textColor="@color/population"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="serif-monospace"
-                                android:textColor="@color/recovered"
+                                android:textColor="@color/population"
                                 android:textSize="20sp"
+                                android:gravity="center"
                                 android:textStyle="bold"
                                 android:id="@+id/tvMild"/>
                         </LinearLayout>
@@ -282,14 +396,16 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif-condensed-medium"
                                 android:text="@string/critical"
-                                android:textColor="@color/death"/>
+                                android:gravity="center"
+                                android:textColor="@color/lightTotalCases"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="serif-monospace"
-                                android:textColor="@color/death"
+                                android:textColor="@color/lightTotalCases"
                                 android:textSize="20sp"
+                                android:gravity="center"
                                 android:textStyle="bold"
                                 android:id="@+id/tvCritical"/>
                         </LinearLayout>
@@ -341,6 +457,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif-condensed-medium"
                                 android:text="@string/newCases"
+                                android:gravity="center"
                                 android:textColor="@color/lightTotalCases"/>
 
                             <TextView
@@ -349,6 +466,7 @@
                                 android:fontFamily="serif-monospace"
                                 android:textColor="@color/lightTotalCases"
                                 android:textSize="20sp"
+                                android:gravity="center"
                                 android:textStyle="bold"
                                 android:id="@+id/tvNewCases"/>
                         </LinearLayout>
@@ -364,6 +482,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif-condensed-medium"
                                 android:text="@string/newDeath"
+                                android:gravity="center"
                                 android:textColor="@color/death"/>
 
                             <TextView
@@ -373,6 +492,7 @@
                                 android:textColor="@color/death"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
+                                android:gravity="center"
                                 android:id="@+id/tvNewDeath"/>
                         </LinearLayout>
 
@@ -397,4 +517,4 @@
         android:layout_centerInParent="true"/>
 
 
-</LinearLayout>
+</RelativeLayout>

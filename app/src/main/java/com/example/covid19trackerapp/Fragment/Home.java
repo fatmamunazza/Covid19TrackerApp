@@ -2,6 +2,7 @@ package com.example.covid19trackerapp.Fragment;
 
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,6 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,6 +51,8 @@ public class Home extends Fragment {
     private SwipeRefreshLayout pullToRefresh;
 
     private RecyclerView recyclerView;
+    private LinearLayout homeList;
+    private CardView cardViewOfCountryList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,7 +60,7 @@ public class Home extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_home, container, false);
 
-        tv=view.findViewById(R.id.tv);
+       // tv=view.findViewById(R.id.tv);
         tvTotalCases=view.findViewById(R.id.tvTotalCases);
         tvRecovered=view.findViewById(R.id.tvRecovered);
         tvDeath=view.findViewById(R.id.tvDeath);
@@ -70,12 +74,14 @@ public class Home extends Fragment {
         tvTest=view.findViewById(R.id.tvTest);
         tvAffectedCountries=view.findViewById(R.id.tvAffectedCountries);
 
+        cardViewOfCountryList=view.findViewById(R.id.countryListCardView);
+
         pullToRefresh=view.findViewById(R.id.pullToRefresh);
 
-        recyclerView=view.findViewById(R.id.recyclerView);
+       /* recyclerView=view.findViewById(R.id.recyclerView);
         countryList=new ArrayList<>();
 
-        countryDataAdapter = new CountryDataAdapter(getContext(), countryList, recyclerView);
+        countryDataAdapter = new CountryDataAdapter(getContext(), countryList, recyclerView);*/
 
         progressBar.setVisibility(View.VISIBLE);
 
@@ -97,11 +103,19 @@ public class Home extends Fragment {
             pullToRefresh.setRefreshing(false);
         }
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+      /*  LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
         recyclerView.setAdapter(countryDataAdapter);
+*/
+      cardViewOfCountryList.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              Fragment fr=new AllCountryList();
+              getFragmentManager().beginTransaction().replace(R.id.container_mainscreen,fr).addToBackStack(null).commit();
 
+          }
+      });
         return view;
     }
 
@@ -145,7 +159,7 @@ public class Home extends Fragment {
                             tvTest.setText(totalTest);
 
                             tvAffectedCountries.setText(affectedCountries);
-
+                            progressBar.setVisibility(View.GONE);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -161,7 +175,7 @@ public class Home extends Fragment {
                 });
         requestQueue.add(jsonObjectRequest);
 
-        String url2 = "https://disease.sh/v2/countries";
+       /* String url2 = "https://disease.sh/v2/countries";
         JsonArrayRequest
                 jsonArrayRequest
                 = new JsonArrayRequest(
@@ -207,7 +221,7 @@ public class Home extends Fragment {
 
                     }
                 });
-        requestQueue.add(jsonArrayRequest);
+        requestQueue.add(jsonArrayRequest);*/
 
 
     }

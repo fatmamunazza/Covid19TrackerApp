@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainScreen"
-    android:background="@color/end">
+    android:background="@color/end"
+    android:id="@+id/drawerLayout">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -25,7 +26,19 @@
             android:layout_height="match_parent"
             android:layout_below="@id/linerlayout_appbar_mainscreen"
             android:id="@+id/container_mainscreen"
-            android:background="@color/white"/>
+            android:background="@color/white"
+            android:layout_above="@+id/adView"/>
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+        </com.google.android.gms.ads.AdView>
+
 
     </RelativeLayout>
 
@@ -37,8 +50,9 @@
         app:headerLayout="@layout/header_drawer_mainscreen"
         android:background="#fff"
         android:elevation="20dp"
-        app:itemShapeFillColor="#ff00ff"
-        app:menu="@menu/drawer_mainscreen">
+        app:menu="@menu/drawer_mainscreen"
+        app:itemTextColor="@color/totalCase"
+        app:itemIconTint="@color/totalCase">
     </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>

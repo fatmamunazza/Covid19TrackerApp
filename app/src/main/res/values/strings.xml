@@ -16,9 +16,15 @@
     <string name="newCases">New Cases</string>
     <string name="newDeath">New Death </string>
 
-    <string name="worldData">All Over World Data</string>
+    <string name="affectedStates">Tap to see affected states </string>
+
+    <string name="worldData">World Data</string>
     <string name="totalPopulation">Total Population</string>
     <string name="totalTest">Total Test</string>
+
+    <string name="countryList">Tap to see the list of countries</string>
+
+    <string name="share_content">Download the app now to update with the corona virus cases.We know that by knowing increasing or decreasing of cases not end up the corona cases.But it might help you to aware of cases and to prevent yourself from that affected places.\nSTAY HOME ,STAY SAFE!!!</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

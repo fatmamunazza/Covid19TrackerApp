@@ -62,6 +62,7 @@ public class CountryDataAdapter  extends RecyclerView.Adapter<CountryDataAdapter
            public void onClick(View view) {
                Fragment fr=new Country();
                Bundle bundle=new Bundle();
+               bundle.putString("screenName","CountryList");
                bundle.putString("country",countryData.getCountry());
                bundle.putString("active",countryData.getCountryActive());
                bundle.putString("cases",countryData.getCountryCases());

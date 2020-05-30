@@ -8,7 +8,62 @@
             android:title="Home"
             android:id="@+id/home_drawer"
             android:icon="@drawable/ic_home"
-            android:iconTint="@color/white"/>
+            android:iconTint="@color/totalCase" />
+        <item
+            android:title="AFFECTED COUNTRY LIST"
+            android:id="@+id/country_list_drawer"
+            android:icon="@drawable/globe"
+            android:iconTint="@color/totalCase" />
+        <item
+            android:title="INDIA COVID-19 CASES"
+            android:id="@+id/india_drawer"
+            android:icon="@drawable/ic_india_map"
+            android:iconTint="@color/totalCase" />
+        <item
+            android:title="AFFECTED INDIA STATE LIST"
+            android:id="@+id/india_state_drawer"
+            android:icon="@drawable/ic_list"
+            android:iconTint="@color/totalCase" />
+        <item
+            android:title="USA COVID-19 CASES"
+            android:id="@+id/usa_drawer"
+            android:icon="@drawable/ic_usa_map"
+            android:iconTint="@color/totalCase" />
+        <!--<item
+            android:title="AFFECTED USA STATE LIST"
+            android:id="@+id/usa_state_drawer"
+            android:icon="@drawable/globe"
+            android:iconTint="@color/totalCase" />-->
+       <!-- <item
+            android:title="YOUR LIST"
+            android:id="@+id/your_drawer"
+            android:icon="@drawable/ic_list"
+            android:iconTint="@color/totalCase" />-->
+        <item
+            android:title="SHARE APP"
+            android:id="@+id/share_drawer"
+            android:icon="@drawable/ic_share"
+            android:iconTint="@color/totalCase" />
+        <item
+            android:title="RATE US"
+            android:id="@+id/rate_drawer"
+            android:icon="@drawable/ic_rate"
+            android:iconTint="@color/totalCase" />
+        <item
+            android:title="COMPLAINTS &amp; FEEDBACK"
+            android:id="@+id/feedback_drawer"
+            android:icon="@drawable/ic_feedback"
+            android:iconTint="@color/totalCase" />
+       <!-- <item
+            android:title="ABOUT US"
+            android:id="@+id/about_drawer"
+            android:icon="@drawable/ic_about"
+            android:iconTint="@color/totalCase" />-->
+     <!--   <item
+            android:title="Contribute to Developer"
+            android:id="@+id/contribute_drawer"
+            android:icon="@drawable/ic_contribute"
+            android:iconTint="@color/totalCase" />-->
 
     </group>
 
