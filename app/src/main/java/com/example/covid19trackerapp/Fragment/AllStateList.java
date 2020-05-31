@@ -1,6 +1,9 @@
 package com.example.covid19trackerapp.Fragment;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -9,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +32,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.covid19trackerapp.ConnectionCheck;
 import com.example.covid19trackerapp.CountryData;
 import com.example.covid19trackerapp.CountryDataAdapter;
 import com.example.covid19trackerapp.R;
@@ -144,6 +149,43 @@ public class AllStateList extends Fragment {
                         tvStateActive.setText(stateData.getActive());
 
                         containerState.addView(view1);
+
+                        TextView tv=new TextView(getContext());
+                        tv.setText("List of Affected Cities Of ");
+                        tv.append(stateData.getState());
+                        tv.setPadding(30,30,0,10);
+                        tv.setTextSize(15);
+                        tv.setGravity(Gravity.CENTER_HORIZONTAL);
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            tv.setTextColor(getActivity().getColor(R.color.colorAccent));
+                        }
+                        containerState.addView(tv);
+
+
+                        ArrayList<String> cities=stateData.getCities();
+                        ArrayList<Integer> totalCasesOfCities=stateData.getTotalCases();
+                        ArrayList<Integer> activeCasesofCities=stateData.getActiveCases();
+                        ArrayList<Integer> recoveredCasesofCities=stateData.getRecoveredCases();
+                        ArrayList<Integer> deathCasesofCities=stateData.getDeathCases();
+
+                       for(int j=0;j<cities.size();j++) {
+                           View view2 = getLayoutInflater().inflate(R.layout.city_layout, containerState, false);
+
+                           TextView city = view2.findViewById(R.id.tvState);
+                           TextView tvCityTotalCase = view2.findViewById(R.id.tvStateTotalCase);
+                           TextView tvCityActive = view2.findViewById(R.id.tvStateActive);
+                           TextView tvCityRecovered = view2.findViewById(R.id.tvStateRecovered);
+                           TextView tvCityDeath = view2.findViewById(R.id.tvStateDeath);
+
+                           city.setText(cities.get(j));
+                           tvCityTotalCase.setText(String.valueOf(totalCasesOfCities.get(j)));
+                           tvCityDeath.setText(String.valueOf(deathCasesofCities.get(j)));
+                           tvCityRecovered.setText(String.valueOf(recoveredCasesofCities.get(j)));
+                           tvCityActive.setText(String.valueOf(activeCasesofCities.get(j)));
+
+                           containerState.addView(view2);
+                       }
+
                     }
                 }
 
@@ -154,6 +196,20 @@ public class AllStateList extends Fragment {
     }
 
     private void addData() {
+
+        if(!ConnectionCheck.checkConnection(getContext())) {
+            progressBar.setVisibility(View.GONE);
+            AlertDialog.Builder dailog =new AlertDialog.Builder(getContext());
+            dailog.setMessage(getString(R.string.connectionAlert));
+            dailog.setCancelable(false);
+            dailog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                }
+            });
+            dailog.create().show();
+        }
 
         String url = "https://api.covid19india.org/state_district_wise.json";
         JsonObjectRequest
@@ -224,17 +280,18 @@ public class AllStateList extends Fragment {
                         }
                         stateSearch.setEnabled(true);
                         progressBar.setVisibility(View.GONE);
-                        adapter = new ArrayAdapter<String>
-                                (getContext(),R.layout.autocomplete_custom, stateNameList);
-                        stateSearch.setThreshold(1);
-                        stateSearch.setAdapter(adapter);
+                        if(getContext()!=null) {
+                            adapter = new ArrayAdapter<String>
+                                    (getContext(), R.layout.autocomplete_custom, stateNameList);
+                            stateSearch.setThreshold(1);
+                            stateSearch.setAdapter(adapter);
+                        }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error)
                     {
-                        progressBar.setVisibility(View.VISIBLE);
 
                     }
                 });

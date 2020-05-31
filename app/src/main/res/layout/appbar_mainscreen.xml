@@ -24,7 +24,7 @@
         android:autoSizeTextType="uniform"
         android:gravity="center_vertical"
         android:layout_toRightOf="@+id/menu_img"
-        android:layout_toLeftOf="@+id/india"/>
+        android:layout_toLeftOf="@+id/india" />
    <!-- <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"

@@ -1,5 +1,7 @@
 package com.example.covid19trackerapp.Fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -21,6 +23,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.covid19trackerapp.ConnectionCheck;
 import com.example.covid19trackerapp.CountryData;
 import com.example.covid19trackerapp.R;
 import com.squareup.picasso.Callback;
@@ -71,6 +74,20 @@ public class Country extends Fragment {
         progressBar.setVisibility(View.VISIBLE);
 
         screenName=getArguments().getString("screenName");
+
+        if(!ConnectionCheck.checkConnection(getContext())) {
+            progressBar.setVisibility(View.GONE);
+            AlertDialog.Builder dailog =new AlertDialog.Builder(getContext());
+            dailog.setMessage(getString(R.string.connectionAlert));
+            dailog.setCancelable(false);
+            dailog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                }
+            });
+            dailog.create().show();
+        }
 
         if(screenName.equalsIgnoreCase("CountryList")){
             country=getArguments().getString("country");
@@ -124,7 +141,6 @@ public class Country extends Fragment {
                         @Override
                         public void onErrorResponse(VolleyError error)
                         {
-                            progressBar.setVisibility(View.VISIBLE);
 
                         }
                     });

@@ -27,11 +27,16 @@
             android:textColor="@color/test"
             android:drawableLeft="@drawable/ic_search"
             app:boxBackgroundColor="@color/white"/>
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/containerState"
-            android:orientation="vertical"/>
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/containerState"
+                android:orientation="vertical"/>
+        </ScrollView>
+
       <!--  <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

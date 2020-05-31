@@ -1,6 +1,8 @@
 package com.example.covid19trackerapp.Fragment;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -30,6 +32,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.covid19trackerapp.ConnectionCheck;
 import com.example.covid19trackerapp.CountryData;
 import com.example.covid19trackerapp.CountryDataAdapter;
 import com.example.covid19trackerapp.R;
@@ -136,7 +139,19 @@ public class AllCountryList extends Fragment {
         return view;
     }
     private void addData() {
+        if(!ConnectionCheck.checkConnection(getContext())) {
+            progressBar.setVisibility(View.GONE);
+            AlertDialog.Builder dailog =new AlertDialog.Builder(getContext());
+            dailog.setMessage(getString(R.string.connectionAlert));
+            dailog.setCancelable(false);
+            dailog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
 
+                }
+            });
+            dailog.create().show();
+        }
         String url2 = "https://disease.sh/v2/countries";
         JsonArrayRequest
                 jsonArrayRequest
@@ -177,10 +192,12 @@ public class AllCountryList extends Fragment {
                             }
 
                             progressBar.setVisibility(View.GONE);
-                            adapter = new ArrayAdapter<String>
-                                    (getContext(),R.layout.autocomplete_custom, countryNameList);
-                            countrySearch.setThreshold(1);
-                            countrySearch.setAdapter(adapter);
+                            if(getContext()!=null) {
+                                adapter = new ArrayAdapter<String>
+                                        (getContext(), R.layout.autocomplete_custom, countryNameList);
+                                countrySearch.setThreshold(1);
+                                countrySearch.setAdapter(adapter);
+                            }
                             //  tv.setText(String.valueOf(response.get(0)));
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -191,7 +208,6 @@ public class AllCountryList extends Fragment {
                     @Override
                     public void onErrorResponse(VolleyError error)
                     {
-                        progressBar.setVisibility(View.VISIBLE);
 
                     }
                 });

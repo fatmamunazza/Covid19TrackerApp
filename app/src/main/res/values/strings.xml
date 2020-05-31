@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Covid19TrackerApp</string>
+    <string name="app_name">Covid 19 Tracker</string>
 
     <string name="totalCasesOfWorld"> Total CoronaVirus Cases Around World</string>
     <string name="totalCasesOfCountry"> Total CoronaVirus Cases</string>
@@ -18,13 +18,15 @@
 
     <string name="affectedStates">Tap to see affected states </string>
 
+    <string name="connectionAlert">Covid-19 Tracker\n\nPlease Check Your Internet Connection.</string>
+
     <string name="worldData">World Data</string>
     <string name="totalPopulation">Total Population</string>
     <string name="totalTest">Total Test</string>
 
     <string name="countryList">Tap to see the list of countries</string>
 
-    <string name="share_content">Download the app now to update with the corona virus cases.We know that by knowing increasing or decreasing of cases not end up the corona cases.But it might help you to aware of cases and to prevent yourself from that affected places.\nSTAY HOME ,STAY SAFE!!!</string>
+    <string name="share_content">Download the app to get recent updates on COVID-19 cases.\nThis app doesn\'t kills the virus but it do creates awarness and the amount of caution one should take in this pandemic.As we yet have no cure for the virus.\nFor now only our awareness and apps like these can help us to keep the pandemic in check.\n\nSTAY HOME ,STAY SAFE!!!</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

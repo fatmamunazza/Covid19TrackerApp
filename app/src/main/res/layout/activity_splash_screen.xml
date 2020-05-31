@@ -1,34 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashScreen"
     android:orientation="vertical"
-    android:gravity="center"
-    android:background="@drawable/gradient_background">
+    android:background="@drawable/splash_background">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="COVID-19"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="60sp"
-        android:textStyle="bold"
-        android:id="@+id/t1"/>
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:id="@+id/covidLayout">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/covid"
+                android:id="@+id/covid"
+                android:layout_centerInParent="true"/>
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/sanitizer"
+                android:id="@+id/sanitizer"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="COVID-19"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="60sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:id="@+id/t1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Tracker"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:id="@+id/t2"/>
+    </LinearLayout>
+    <ProgressBar
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Tracker App"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        android:id="@+id/t2"/>
-
-</LinearLayout>
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_alignParentBottom="true"
+        android:max="100"
+        android:progress="1"
+        android:indeterminate="true"/>
+</RelativeLayout>

@@ -1,5 +1,7 @@
 package com.example.covid19trackerapp.Fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -23,6 +25,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.covid19trackerapp.ConnectionCheck;
 import com.example.covid19trackerapp.CountryData;
 import com.example.covid19trackerapp.CountryDataAdapter;
 import com.example.covid19trackerapp.MainScreen;
@@ -120,6 +123,20 @@ public class Home extends Fragment {
     }
 
     private void addData() {
+        if(!ConnectionCheck.checkConnection(getContext())) {
+            progressBar.setVisibility(View.GONE);
+            AlertDialog.Builder dailog =new AlertDialog.Builder(getContext());
+            dailog.setMessage(getString(R.string.connectionAlert));
+            dailog.setCancelable(false);
+            dailog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                }
+            });
+            dailog.create().show();
+        }
+
         String url = "https://disease.sh/v2/all";
         JsonObjectRequest
                 jsonObjectRequest
@@ -169,7 +186,6 @@ public class Home extends Fragment {
                     @Override
                     public void onErrorResponse(VolleyError error)
                     {
-                        progressBar.setVisibility(View.VISIBLE);
 
                     }
                 });

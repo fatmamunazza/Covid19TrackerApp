@@ -13,6 +13,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -43,6 +44,7 @@ import com.example.covid19trackerapp.Fragment.AllCountryList;
 import com.example.covid19trackerapp.Fragment.AllStateList;
 import com.example.covid19trackerapp.Fragment.Country;
 import com.example.covid19trackerapp.Fragment.Home;
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -61,6 +63,7 @@ public class MainScreen extends AppCompatActivity{
     public DrawerLayout drawerLayout;
     RelativeLayout actionLayout;
     ImageView india,usa,search,menu;
+    TextView appTitle;
     Boolean homeFlag=true;
 
     @Override
@@ -68,17 +71,11 @@ public class MainScreen extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
 
-        ConnectivityManager cm = (ConnectivityManager)
-                getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = cm.getActiveNetworkInfo();
-        if (networkInfo == null && !networkInfo.isConnected()) {
-            Toast.makeText(this, "No Internet Detected...Please Check Your Internet Connection!!!", Toast.LENGTH_SHORT).show();
-        }
-
         navigationDrawerLayout=findViewById(R.id.navigation_drawer_view);
         drawerLayout=findViewById(R.id.drawerLayout);
         actionLayout=findViewById(R.id.actionLayout);
         menu=actionLayout.findViewById(R.id.menu_img);
+        appTitle=actionLayout.findViewById(R.id.app_title);
         india=actionLayout.findViewById(R.id.india);
         usa=actionLayout.findViewById(R.id.usa);
        // search=actionLayout.findViewById(R.id.search);
@@ -113,11 +110,19 @@ public class MainScreen extends AppCompatActivity{
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
+
+
+        appTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fr=new Home();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container_mainscreen,fr).commit();
             }
         });
 
@@ -253,12 +258,12 @@ public class MainScreen extends AppCompatActivity{
                         homeFlag=false;
                         return false;
                     }
-                    case R.id.rate_drawer: {
-                       /* Intent intent = new Intent(Intent.ACTION_VIEW);
+                   /* case R.id.rate_drawer: {
+                       *//* Intent intent = new Intent(Intent.ACTION_VIEW);
                         intent.setData(Uri.parse("market://details?id=com.facebook.katana"));
-                        startActivity(intent);*/
+                        startActivity(intent);*//*
                         homeFlag=false;
-                    }
+                    }*/
                     case R.id.share_drawer: {
                         String share_string = getString(R.string.share_content);
 
