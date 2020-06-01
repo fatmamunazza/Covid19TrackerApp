@@ -97,7 +97,12 @@ public class MainScreen extends AppCompatActivity{
             public void onDrawerStateChanged(int newState) {
                 InputMethodManager imm = (InputMethodManager)getSystemService(Context.
                         INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+                View focusedView = getCurrentFocus();
+
+                if (focusedView != null) {
+                    imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+
+                }
             }
         });
 
@@ -284,6 +289,15 @@ public class MainScreen extends AppCompatActivity{
                             ActivityCompat.requestPermissions(MainScreen.this,
                                     new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                                     200);
+                            if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+//
+                                Intent share = new Intent(Intent.ACTION_SEND);
+                                share.setType("text/*");
+                                Uri file = Uri.parse(path);
+                                share.putExtra(Intent.EXTRA_STREAM, file);
+                                share.putExtra(Intent.EXTRA_TEXT, share_string);
+                                startActivity(Intent.createChooser(share, "Share Via"));
+                            }
                         }
                         drawerLayout.closeDrawer(GravityCompat.START);
                         homeFlag=false;

@@ -12,13 +12,13 @@
     <string name="mildCondition">In mild Condition</string>
     <string name="critical">Serious or Critical </string>
 
-    <string name="LiveInfo">Today\'s New Cases</string>
+    <string name="LiveInfo">New Cases within 24hrs</string>
     <string name="newCases">New Cases</string>
     <string name="newDeath">New Death </string>
 
     <string name="affectedStates">Tap to see affected states </string>
 
-    <string name="connectionAlert">Covid-19 Tracker\n\nPlease Check Your Internet Connection.</string>
+    <string name="connectionAlert">Please Check Your Internet Connection.</string>
 
     <string name="worldData">World Data</string>
     <string name="totalPopulation">Total Population</string>

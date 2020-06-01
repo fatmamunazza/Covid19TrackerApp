@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
@@ -8,5 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/white</item>
     </style>
+
+    <style name="transitionTheme" parent="Theme.AppCompat">
+        <item name="android:backgroundTint" tools:targetApi="lollipop">@color/white</item>
+    </style>
+
+    <style name="NavDrawerTextStyle" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textSize">12dp</item>
+    </style>
+
 
 </resources>

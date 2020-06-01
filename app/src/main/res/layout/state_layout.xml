@@ -54,7 +54,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="serif-monospace"
                         android:textColor="@color/population"
-                        android:textSize="20sp"
+                        android:textSize="20dp"
                         android:textStyle="bold"
                         android:gravity="center"
                         android:id="@+id/tvStateTotalCase"/>
@@ -79,7 +79,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="serif-monospace"
                         android:textColor="@color/progressEnd"
-                        android:textSize="20sp"
+                        android:textSize="20dp"
                         android:textStyle="bold"
                         android:gravity="center"
                         android:id="@+id/tvStateActive"/>
@@ -113,7 +113,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="serif-monospace"
                         android:textColor="@color/recovered"
-                        android:textSize="20sp"
+                        android:textSize="20dp"
                         android:textStyle="bold"
                         android:gravity="center"
                         android:id="@+id/tvStateRecovered"/>
@@ -138,7 +138,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="serif-monospace"
                         android:textColor="@color/death"
-                        android:textSize="20sp"
+                        android:textSize="20dp"
                         android:textStyle="bold"
                         android:gravity="center"
                         android:id="@+id/tvStateDeath"/>

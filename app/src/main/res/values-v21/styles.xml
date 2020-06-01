@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="transitionTheme" parent="Theme.AppCompat">
+        <item name="android:backgroundTint">@color/white</item>
+    </style>
+
+
+</resources>

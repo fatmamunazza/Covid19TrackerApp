@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:text="Covid-19 Tracker"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="25dp"
                 android:id="@+id/username"
                 android:textStyle="bold"
                 android:gravity="center_horizontal"

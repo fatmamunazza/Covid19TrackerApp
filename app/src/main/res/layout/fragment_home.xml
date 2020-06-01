@@ -34,7 +34,7 @@
                     android:layout_marginTop="20dp"
                     android:textStyle="bold"
                     android:fontFamily="serif"
-                    android:textSize="15sp"/>
+                    android:textSize="15dp"/>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
@@ -109,7 +109,7 @@
                                         android:layout_height="wrap_content"
                                         android:fontFamily="serif-monospace"
                                         android:textColor="@color/population"
-                                        android:textSize="20sp"
+                                        android:textSize="20dp"
                                         android:textStyle="bold"
                                         android:gravity="center"
                                         android:id="@+id/tvPopulation"/>
@@ -134,7 +134,7 @@
                                         android:layout_height="wrap_content"
                                         android:fontFamily="serif-monospace"
                                         android:textColor="@color/testLight"
-                                        android:textSize="20sp"
+                                        android:textSize="20dp"
                                         android:textStyle="bold"
                                         android:gravity="center"
                                         android:id="@+id/tvTest"/>
@@ -179,7 +179,7 @@
                                 android:gravity="center"
                                 android:textStyle="bold"
                                 android:fontFamily="serif-monospace"
-                                android:textSize="20sp"
+                                android:textSize="20dp"
                                 android:id="@+id/tvTotalCases"/>
 
                             <LinearLayout
@@ -208,7 +208,7 @@
                                         android:layout_height="wrap_content"
                                         android:fontFamily="serif-monospace"
                                         android:textColor="@color/recovered"
-                                        android:textSize="20sp"
+                                        android:textSize="20dp"
                                         android:textStyle="bold"
                                         android:gravity="center"
                                         android:id="@+id/tvRecovered"/>
@@ -233,7 +233,7 @@
                                         android:layout_height="wrap_content"
                                         android:fontFamily="serif-monospace"
                                         android:textColor="@color/death"
-                                        android:textSize="20sp"
+                                        android:textSize="20dp"
                                         android:gravity="center"
                                         android:textStyle="bold"
                                         android:id="@+id/tvDeath"/>
@@ -274,7 +274,7 @@
                                 android:textColor="@color/totalCase"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                android:textSize="20sp"
+                                android:textSize="20dp"
                                 android:fontFamily="serif-monospace"
                                 android:id="@+id/tvActive"/>
 
@@ -304,7 +304,7 @@
                                         android:layout_height="wrap_content"
                                         android:fontFamily="serif-monospace"
                                         android:textColor="@color/population"
-                                        android:textSize="20sp"
+                                        android:textSize="20dp"
                                         android:gravity="center"
                                         android:textStyle="bold"
                                         android:id="@+id/tvMild"/>
@@ -329,7 +329,7 @@
                                         android:layout_height="wrap_content"
                                         android:fontFamily="serif-monospace"
                                         android:textColor="@color/lightTotalCases"
-                                        android:textSize="20sp"
+                                        android:textSize="20dp"
                                         android:gravity="center"
                                         android:textStyle="bold"
                                         android:id="@+id/tvCritical"/>
@@ -390,7 +390,7 @@
                                         android:layout_height="wrap_content"
                                         android:fontFamily="serif-monospace"
                                         android:textColor="@color/lightTotalCases"
-                                        android:textSize="20sp"
+                                        android:textSize="20dp"
                                         android:gravity="center"
                                         android:textStyle="bold"
                                         android:id="@+id/tvNewCases"/>
@@ -415,7 +415,7 @@
                                         android:layout_height="wrap_content"
                                         android:fontFamily="serif-monospace"
                                         android:textColor="@color/death"
-                                        android:textSize="20sp"
+                                        android:textSize="20dp"
                                         android:textStyle="bold"
                                         android:gravity="center"
                                         android:id="@+id/tvNewDeath"/>

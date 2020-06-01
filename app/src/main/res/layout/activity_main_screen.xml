@@ -50,6 +50,7 @@
         app:headerLayout="@layout/header_drawer_mainscreen"
         android:background="#fff"
         android:elevation="20dp"
+        app:itemTextAppearance="@style/NavDrawerTextStyle"
         app:menu="@menu/drawer_mainscreen"
         app:itemTextColor="@color/totalCase"
         app:itemIconTint="@color/totalCase">

@@ -28,7 +28,7 @@
             <ImageView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:src="@drawable/sanitizer"
+                android:src="@drawable/sanitizer_bottle_image"
                 android:id="@+id/sanitizer"
                 android:layout_centerInParent="true"/>
 
@@ -41,7 +41,7 @@
             android:text="COVID-19"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="60sp"
+            android:textSize="45dp"
             android:gravity="center"
             android:textStyle="bold"
             android:id="@+id/t1"/>
@@ -54,7 +54,7 @@
             android:text="Tracker"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="40sp"
+            android:textSize="40dp"
             android:textStyle="bold"
             android:id="@+id/t2"/>
     </LinearLayout>
@@ -65,5 +65,5 @@
         android:layout_alignParentBottom="true"
         android:max="100"
         android:progress="1"
-        android:indeterminate="true"/>
+        android:id="@+id/horizontalProgressBar"/>
 </RelativeLayout>
